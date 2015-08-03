@@ -195,7 +195,7 @@ class LeafletMarker extends RowPluginBase {
       ->getField($row->index, $this->options['name_field']);
 
     foreach ($points as &$point) {
-      $point['popup'] = $popup_body;
+      $point['popup'] = (string) $popup_body;
       $point['label'] = $label;
 
       // Allow sub-classes to adjust the marker.

@@ -361,7 +361,7 @@ class LeafletMap extends StylePluginBase {
           // Attach pop-ups if we have a description field
           if (isset($description)) {
             foreach ($points as &$point) {
-              $point['popup'] = $description;
+              $point['popup'] = (string) $description;
             }
           }
 
