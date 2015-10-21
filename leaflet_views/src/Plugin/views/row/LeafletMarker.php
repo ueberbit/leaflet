@@ -152,8 +152,10 @@ class LeafletMarker extends RowPluginBase {
    * {@inheritdoc}
    */
   public function render($row) {
-    $geofield_value = $this->view->getStyle()
-      ->getField($row->index, $this->options['data_source']);
+    $entity = $row->_entity;
+    if ($entity->hasField($this->options['data_source'])) {
+      $geofield_value = $entity->get($this->options['data_source'])->get(0)->getValue()['value'];
+    }
 
     if (empty($geofield_value)) {
       return FALSE;
