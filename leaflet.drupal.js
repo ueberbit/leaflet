@@ -255,7 +255,9 @@
     if (options.shadowAnchor) {
       icon.options.shadowAnchor = new L.Point(parseInt(options.shadowAnchor.x), parseInt(options.shadowAnchor.y));
     }
-
+    if (options.className) {
+      icon.options.className = options.className;
+    }
     return icon;
   };
 
