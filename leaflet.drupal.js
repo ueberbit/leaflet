@@ -56,12 +56,13 @@
     }
 
     // Set initial view, fallback to displaying the whole world.
-    if (this.settings.center && this.settings.zoom) {
+    // Commented out since it overwrites the view with fallback settings.
+/*    if (this.settings.center && this.settings.zoom) {
       this.lMap.setView(new L.LatLng(this.settings.center.lat, this.settings.center.lng), this.settings.zoom);
     }
     else {
       this.lMap.fitWorld();
-    }
+    }*/
 
     // Add attribution
     if (this.settings.attributionControl && this.map_definition.attribution) {
